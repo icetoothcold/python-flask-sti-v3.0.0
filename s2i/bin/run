@@ -1,0 +1,10 @@
+#!/bin/sh -e
+#
+# S2I run script for the 'python-flask-sti' image.
+# The run script executes the server that runs your application.
+#
+# For more information see the documentation:
+#	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
+#
+
+find . -type f -name app.py | xargs python

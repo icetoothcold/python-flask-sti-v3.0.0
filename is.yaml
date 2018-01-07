@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ImageStream
+metadata:
+  annotations:
+    openshift.io/display-name: python-flask-sti
+  name: python-flask-sti
+spec:
+  tags:
+  - annotations:
+      description: Provides a flask on python2.7.14 alpine.
+      iconClass: icon-mariadb
+      openshift.io/display-name: python-flask-sti v1.0.0
+      tags: builder,python,flask,sti,s2i
+      version: "v1.0.0"
+    from:
+      kind: DockerImage
+      name: registry.travelsky.com:5000/lydong/python-flask-sti:v1.0.0
+    importPolicy: {}
+    name: "v1.0.0"
+    referencePolicy:
+      type: Source
